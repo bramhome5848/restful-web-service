@@ -1,4 +1,4 @@
-package com.lkj.restfulwebservice;
+package com.lkj.restfulwebservice.helloworld;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
