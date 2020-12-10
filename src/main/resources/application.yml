@@ -4,3 +4,8 @@ server:
 logging:
   level:
     org.springframework: DEBUG
+
+#다국어 파일 설정
+spring:
+  messages:
+    basename: messages

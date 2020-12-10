@@ -1,10 +1,8 @@
 package com.lkj.restfulwebservice.user;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -14,9 +12,9 @@ public class UserService {
     private static int usersCount = 3;
 
     static {
-        users.add(new User(1, "lkj1'", new Date()));
-        users.add(new User(2, "lkj2'", new Date()));
-        users.add(new User(3, "lkj3'", new Date()));
+        users.add(new User(1, "lkj1", new Date(), "pass1", "700311-1010101"));
+        users.add(new User(2, "lkj2", new Date(), "pass1", "800311-1010101"));
+        users.add(new User(3, "lkj3", new Date(), "pass1", "980311-1010101"));
     }
 
     public List<User> findAll() {
