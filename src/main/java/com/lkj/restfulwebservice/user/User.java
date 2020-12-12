@@ -16,7 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 //@JsonIgnoreProperties(value = {"password", "ssn"})
 //@JsonFilter -> Filter ID를 문자열로 지정, 해당 어노테이션을 사용하면 무조건 FilterProvider 와 해당 ID를 처리하는 필터를 제공해야 함
-@JsonFilter("UserInfo")
+//@JsonFilter("UserInfo")
 public class User {
 
     private Integer id;
