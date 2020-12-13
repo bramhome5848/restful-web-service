@@ -27,6 +27,9 @@ dependencies {
 	//현재 리스와 연관된(호출 가능한)소 자원 상태 정보를 제공
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 
+	//Swagger - for REST API Documentation
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
 	//xml return
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 
