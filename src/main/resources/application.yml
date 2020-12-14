@@ -5,10 +5,17 @@ logging:
   level:
     org.springframework: DEBUG
 
-# 다국어 파일 설정
+
 spring:
+  # 다국어 파일 설정
   messages:
     basename: messages
+
+  # Spring Security
+  security:
+    user:
+      name: user
+      password: 12345678
 
 # Monitoring by Actuator
 management:
@@ -16,3 +23,7 @@ management:
     web:
       exposure:
         include: "*"
+
+
+
+
