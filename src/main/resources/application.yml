@@ -5,7 +5,6 @@ logging:
   level:
     org.springframework: DEBUG
 
-
 spring:
   # 다국어 파일 설정
   messages:

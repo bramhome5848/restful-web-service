@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class User {
     private String ssn;
 
     @OneToMany(mappedBy = "user")   //양방향 연관관계에서 주인이 아닌쪽, 조회를 위한 JPQL 이나 객체 그래프 탐색할 때 사용
-    private List<Post> posts;
+    private List<Post> posts = new ArrayList<>();;
 
     public User(Integer id, @Size(min = 2, message = "Name 은 2글자 이상 입력해 주세요.") String name, @Past Date joinDate, String password, String ssn) {
         this.id = id;
