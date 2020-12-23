@@ -74,7 +74,6 @@ public class UserJpaController {
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
 
-        System.err.println("-----------------------------");
         return user.get().getPosts();
     }
 
