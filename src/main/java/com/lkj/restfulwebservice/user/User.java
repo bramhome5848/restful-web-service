@@ -23,13 +23,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = "id")
 //@JsonIgnoreProperties(value = {"password", "ssn"})
 //@JsonFilter -> Filter ID를 문자열로 지정, 해당 어노테이션을 사용하면 무조건 FilterProvider 와 해당 ID를 처리하는 필터를 제공해야 함
 //@JsonFilter("UserInfo")
 @ApiModel(description = "사용자 상세 정보를 위한 객체") //swagger
 @Entity
-
 public class User {
 
     @Id

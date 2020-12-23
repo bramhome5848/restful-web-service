@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(of = "id")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
