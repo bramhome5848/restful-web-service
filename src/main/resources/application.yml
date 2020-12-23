@@ -17,6 +17,17 @@ spring:
       name: user
       password: 12345678
 
+  #h2 setting -> 최신 h2 에서는 데이터베이스를 미리 생성하는것을 방지하도록 설정되어 있어서
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  # jpa log
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
 # Monitoring by Actuator
 management:
   endpoints:
