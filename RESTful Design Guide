@@ -1,0 +1,35 @@
+** Richardson Maturity Model
+
+* A way to grade your API according to the constraints of REST
+
+* Level 0
+- Expose soap web services in rest style
+- http://server/getPosts
+- http://server/deletePosts
+
+* Level 1
+- Expose resources with proper uri
+- http://server/account
+- http://server/account/10
+- note: improper use of http methods
+
+* level 2
+- level1 + HTTP methods
+
+* level 3
+- level 2 + HATEOAS
+- DATA + next possible action
+
+** REST API 설계 시 고려해야할 사항
+* consume first
+* make best use of http
+* request methods(get, post, put, delete)
+* response status(200, 201, 400, 401, 404)
+* no secure info in URI
+* use plurals(복수형태의 사용) (prefer /users to /user, prefer /users/1 to /user/1)
+* user nouns for resources (명사 사용)
+* for exceptions - define a consistent approach
+ex) /search
+ex) PUT /lkj/{id}/star
+ex) DELETE /lkj/{id}/star
+

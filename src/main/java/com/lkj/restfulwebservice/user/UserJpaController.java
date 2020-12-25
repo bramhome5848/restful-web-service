@@ -41,7 +41,7 @@ public class UserJpaController {
         WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
         resource.add(linkTo.withRel("all-users"));
 
-        return resource;
+        return resource;    //리턴과 함께 추가 쿼리 발생, Entity 리턴시 lazy operation 발생하는 것으로 추정
     }
 
     @PostMapping("/users")
