@@ -42,7 +42,8 @@ public class UserJpaController {
         resource.add(linkTo.withRel("all-users"));
 
         //json 변환을 위해서는 getter 가 반드시 필요 -> entity return 시 lazy operation 이 의도하지 않게 발생
-        //순환 참조 방지를 위해 @JsonIgnore 보다는 Dto 를 통해 필요한 정보만 전달하는 것이 좋으 순환 참조가 일어나지 않도록 작성해야함며
+        //순환 참조 방지를 위해 @JsonIgnore 보다는 Dto 를 통해 필요한 정보만 전달하는 것이 좋으며 순환 참조가 일어나지 않도록 작성해야함며
+        //getPosts() 에서는 쿼리 실행되지 않음, 해당 entity 내용에 대한 get() 함수 또는 list의 size() 접근시에 쿼리 실행
         return resource;
     }
 
