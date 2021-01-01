@@ -41,9 +41,20 @@ public class UserJpaController {
         WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
         resource.add(linkTo.withRel("all-users"));
 
-        //json 변환을 위해서는 getter 가 반드시 필요 -> entity return 시 lazy operation 이 의도하지 않게 발생
-        //순환 참조 방지를 위해 @JsonIgnore 보다는 Dto 를 통해 필요한 정보만 전달하는 것이 좋으며 순환 참조가 일어나지 않도록 작성해야함며
-        //getPosts() 에서는 쿼리 실행되지 않음, 해당 entity 내용에 대한 get() 함수 또는 list의 size() 접근시에 쿼리 실행
+        /**
+         * JPA Entity를 JSON으로 변환할 때 발생할 수 있는 문제점
+         * 1. Entity를 JSON으로 변환을 했더니 에러가 발생
+         * - 엔티티 간의 관계 설정에 의해 서로 참조에 의해 무한루프가 발생
+         * - toMany -> @JsonBackReference, toOne -> @JsonManagedReference
+         * 2. Fetch Lazy까지 조회
+         * - Json serialize 과정에서 엔티티의 모든 필드들을 맵핑 하려고 하면서 Fetch Lazy 설정한 필드들까지 추가로 조회를 해주는 문제가 발생
+         * - @JsonBackReference, @JsonManagedReference 는 무한 참조만 해결해주기 때문에
+         * - @JsonIgnore 를 사용하거나, DTO 를 통해서 데이터 전달하는 방식이 필요
+         * 3. 참고
+         * - json 변환을 위해서는 getter 가 반드시 필요
+         * - @JsonIgnore 보다는 Dto 를 통한 데이터 전달이 효과적
+         * - getList() 에서는 쿼리 실행되지 않으며, entity 의 내용에 대한 get() 함수 또는 list 의 size() 호출시에 쿼리 실행 -> lazy
+         */
         return resource;
     }
 
